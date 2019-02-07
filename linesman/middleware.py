@@ -33,10 +33,11 @@ from linesman import ProfilingSession, draw_graph
 log = logging.getLogger(__name__)
 
 # Graphs
-GRAPH_DIR = os.path.join(gettempdir(), "linesman-graph")
+TEMP_DIR = gettempdir()
+GRAPH_DIR = os.path.join(TEMP_DIR, "linesman-graph")
 MEDIA_DIR = resource_filename("linesman", "media")
 TEMPLATES_DIR = resource_filename("linesman", "templates")
-ENABLED_FLAG_FILE = 'linesman-enabled'
+ENABLED_FLAG_FILE = os.path.join(TEMP_DIR, "linesman-enabled")
 
 CUTOFF_TIME_UNITS = 1e9  # Nanoseconds per second
 
